@@ -4,14 +4,17 @@
 TODO
 
 *TODO a function generating the computer's choice
+*? COMPLETE
 
     The function must be called getComputerChoice
 
 *TODO a function asking for the player's choice
+*? COMPLETE
 
     The function must be called getPlayerChoice
 
 *TODO a function calling the round
+*? COMPLETE
 
     The function must be called playRound and take 2 other functions as parameters (playerSelection, computerSelection)
 
@@ -47,10 +50,10 @@ function getPlayerChoice() {
   return inFunctionPlayerSelection;
 } /**_______________________end of the function getPlayerChoice()_______________________**/
 
-const computerSelection = getComputerChoice();
-const playerSelection = getPlayerChoice();
+function playRound() {
+  const playerSelection = getPlayerChoice();
+  const computerSelection = getComputerChoice();
 
-function playRound(playerSelection, computerSelection) {
   if (playerSelection === computerSelection) {
     return console.log(`It's a tie!`);
   } else if (playerSelection === `rock` && computerSelection === `paper`) {
@@ -66,4 +69,10 @@ function playRound(playerSelection, computerSelection) {
   } else if (playerSelection === `scissors` && computerSelection === `paper`) {
     return console.log(`You Won! Scissors beats Paper!`);
   }
-} /**_______________________end of the function getPlayerChoice()_______________________**/
+} /**_______________________end of the function playRound()_______________________**/
+
+function playGame() {
+  for (let roundNumber = 0; roundNumber < 5; roundNumber++) {
+    playRound();
+  }
+} /**_______________________end of the function playGame()_______________________**/
