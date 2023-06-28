@@ -7,3 +7,4 @@
  I plan to re-familiarize myself with programming and finish the Odin Project Fundamentals course before the next steps.
 
  The NUMBER ONE OBJECTIVE is to write code in a human readable way (as clear as possible), and to preserve what's considered good practice.
+ 

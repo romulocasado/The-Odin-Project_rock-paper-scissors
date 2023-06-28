@@ -1,36 +1,12 @@
-/**
-**This is the Rock, Paper and Scissors console game script code, in JS
-
-TODO
-
-*TODO a function generating the computer's choice
-*? COMPLETE
-
-    The function must be called getComputerChoice
-
-*TODO a function asking for the player's choice
-*? COMPLETE
-
-    The function must be called getPlayerChoice
-
-*TODO a function calling the round
-*? COMPLETE
-
-    The function must be called playRound and take 2 other functions as parameters (playerSelection, computerSelection)
-
-*TODO a function calling the full 5 rounds game
-
-    The function must be called playGame and take the playRound function as a parameter
-*/
-
 const gameOptions = [`rock`, `paper`, `scissors`];
 
 function getComputerChoice() {
-  let inFunctionComputerSelection =
+  let ComputerRandomSelection =
     gameOptions[Math.floor(gameOptions.length * Math.random())];
 
-  return inFunctionComputerSelection;
-} /**_______________________end of the function getComputerChoice()_______________________**/
+  return ComputerRandomSelection;
+}/*end of the function getComputerChoice()*/
+
 
 function getPlayerChoice() {
   let inFunctionPlayerSelection = prompt(`write "ROCK", "PAPER" or "SCISSORS"`);
@@ -48,11 +24,14 @@ function getPlayerChoice() {
   inFunctionPlayerSelection = inFunctionPlayerSelection.toLowerCase();
 
   return inFunctionPlayerSelection;
-} /**_______________________end of the function getPlayerChoice()_______________________**/
+}/*end of the function getPlayerChoice()*/
 
 function playRound() {
+
   const playerSelection = getPlayerChoice();
   const computerSelection = getComputerChoice();
+
+  // conditional statements for each one of the scenarios in the round
 
   if (playerSelection === computerSelection) {
     return console.log(`It's a tie!`);
@@ -69,10 +48,10 @@ function playRound() {
   } else if (playerSelection === `scissors` && computerSelection === `paper`) {
     return console.log(`You Won! Scissors beats Paper!`);
   }
-} /**_______________________end of the function playRound()_______________________**/
+}/*end of the function playRound()*/
 
 function playGame() {
   for (let roundNumber = 0; roundNumber < 5; roundNumber++) {
     playRound();
   }
-} /**_______________________end of the function playGame()_______________________**/
+}/*end of the function playGame()*/
