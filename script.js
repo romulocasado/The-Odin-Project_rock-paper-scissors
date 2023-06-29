@@ -15,7 +15,7 @@ function getPlayerChoice() {
     inFunctionPlayerSelection === null ||
     inFunctionPlayerSelection === undefined ||
     !gameOptions.includes(inFunctionPlayerSelection.toLowerCase())
-    // checks if the prompt contains one of the 3 values provided at gameOptions array
+    // checks if inFunctionPlayerSelection contains one of the 3 values provided at gameOptions array
   ) {
     alert(`You have to write one of the options: ROCK, PAPER, or SCISSORS`);
     return getPlayerChoice();
