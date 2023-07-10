@@ -1,57 +1,81 @@
 const gameOptions = [`rock`, `paper`, `scissors`];
+let roundResults = [];
 
 function getComputerChoice() {
   let ComputerRandomSelection =
     gameOptions[Math.floor(gameOptions.length * Math.random())];
 
   return ComputerRandomSelection;
-}/*end of the function getComputerChoice()*/
-
+} /*end of the function getComputerChoice()*/
 
 function getPlayerChoice() {
-  let inFunctionPlayerSelection = prompt(`write "ROCK", "PAPER" or "SCISSORS"`);
+  let PlayerSelection = prompt(`write "ROCK", "PAPER" or "SCISSORS"`);
 
   if (
-    inFunctionPlayerSelection === null ||
-    inFunctionPlayerSelection === undefined ||
-    !gameOptions.includes(inFunctionPlayerSelection.toLowerCase())
-    // checks if inFunctionPlayerSelection contains one of the 3 values provided at gameOptions array
+    PlayerSelection === null ||
+    PlayerSelection === undefined ||
+    !gameOptions.includes(PlayerSelection.toLowerCase())
+    // checks if PlayerSelection contains one of the 3 values provided at gameOptions array
   ) {
-    alert(`You have to write one of the options: ROCK, PAPER, or SCISSORS`);
+    alert(`You have to type one of the options: ROCK, PAPER, or SCISSORS`);
     return getPlayerChoice();
   }
 
-  inFunctionPlayerSelection = inFunctionPlayerSelection.toLowerCase();
+  return PlayerSelection.toLowerCase();
+} /*end of the function getPlayerChoice()*/
 
-  return inFunctionPlayerSelection;
-}/*end of the function getPlayerChoice()*/
-
-function playRound() {
-
+function playRound(round) {
   const playerSelection = getPlayerChoice();
   const computerSelection = getComputerChoice();
 
   // conditional statements for each one of the scenarios in the round
 
   if (playerSelection === computerSelection) {
-    return console.log(`It's a tie!`);
-  } else if (playerSelection === `rock` && computerSelection === `paper`) {
-    return console.log(`You Lose! Paper beats Rock!`);
-  } else if (playerSelection === `rock` && computerSelection === `scissors`) {
-    return console.log(`You Won! Rock beats Scissors`);
-  } else if (playerSelection === `paper` && computerSelection === `rock`) {
-    return console.log(`You Won! Paper beats Rock!`);
-  } else if (playerSelection === `paper` && computerSelection === `scissors`) {
-    return console.log(`You Lose! Scissors beats Paper!`);
-  } else if (playerSelection === `scissors` && computerSelection === `rock`) {
-    return console.log(`You Lose! Rock beats Scissors!`);
-  } else if (playerSelection === `scissors` && computerSelection === `paper`) {
-    return console.log(`You Won! Scissors beats Paper!`);
+    roundResults.push("Tie");
+    console.log(`Round ${round}: It's a tie!`);
+  } else if (
+    (playerSelection === `rock` && computerSelection === `scissors`) ||
+    (playerSelection === `paper` && computerSelection === `rock`) ||
+    (playerSelection === `scissors` && computerSelection === `paper`)
+  ) {
+    roundResults.push(`Player`);
+    console.log(`Round ${round}: You won this round!`);
+  } else {
+    roundResults.push(`Computer`);
+    console.log(`Round ${round}: You lost this round!`);
   }
-}/*end of the function playRound()*/
+} /*end of the function playRound()*/
+
+function logWins() {
+  let playerWins = roundResults.filter((result) => result === "Player").length;
+  let computerWins = roundResults.filter(
+    (result) => result === "Computer"
+  ).length;
+  let tiedGames = roundResults.filter((result) => result === "Tie").length;
+
+  console.log(`~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~`);
+  console.log("Results:");
+  console.log(`Player Wins: ${playerWins}`);
+  console.log(`Computer Wins: ${computerWins}`);
+  console.log(`Ties: ${tiedGames}`);
+
+  if (playerWins > computerWins) {
+    console.log(`You won the game!`);
+  } else if (computerWins > playerWins) {
+    console.log(`You lost the game`);
+  } else {
+    console.log(`The game tied!`);
+  }
+  console.log(`_____________________________________________`);
+}
 
 function playGame() {
   for (let roundNumber = 0; roundNumber < 5; roundNumber++) {
-    playRound();
+    playRound(roundNumber);
   }
-}/*end of the function playGame()*/
+} /*end of the function playGame()*/
+
+
+playGame();
+logWins();
+
