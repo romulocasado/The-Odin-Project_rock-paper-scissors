@@ -5,8 +5,7 @@ function getComputerChoice() {
     gameOptions[Math.floor(gameOptions.length * Math.random())];
 
   return ComputerRandomSelection;
-}/*end of the function getComputerChoice()*/
-
+} /*end of the function getComputerChoice()*/
 
 function getPlayerChoice() {
   let inFunctionPlayerSelection = prompt(`write "ROCK", "PAPER" or "SCISSORS"`);
@@ -24,10 +23,9 @@ function getPlayerChoice() {
   inFunctionPlayerSelection = inFunctionPlayerSelection.toLowerCase();
 
   return inFunctionPlayerSelection;
-}/*end of the function getPlayerChoice()*/
+} /*end of the function getPlayerChoice()*/
 
 function playRound() {
-
   const playerSelection = getPlayerChoice();
   const computerSelection = getComputerChoice();
 
@@ -48,10 +46,38 @@ function playRound() {
   } else if (playerSelection === `scissors` && computerSelection === `paper`) {
     return console.log(`You Won! Scissors beats Paper!`);
   }
-}/*end of the function playRound()*/
+} /*end of the function playRound()*/
+
+function logWins() {
+  let playerWins = roundResults.filter((result) => result === "Player").length;
+  let computerWins = roundResults.filter(
+    (result) => result === "Computer"
+  ).length;
+  let tiedGames = roundResults.filter((result) => result === "Tie").length;
+
+  console.log(`~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~`);
+  console.log("Results:");
+  console.log(`Player Wins: ${playerWins}`);
+  console.log(`Computer Wins: ${computerWins}`);
+  console.log(`Ties: ${tiedGames}`);
+
+  if (playerWins > computerWins) {
+    console.log(`You won the game!`);
+  } else if (computerWins > playerWins) {
+    console.log(`You lost the game`);
+  } else {
+    console.log(`The game tied!`);
+  }
+  console.log(`_____________________________________________`);
+}
 
 function playGame() {
   for (let roundNumber = 0; roundNumber < 5; roundNumber++) {
     playRound();
   }
-}/*end of the function playGame()*/
+} /*end of the function playGame()*/
+
+/*
+playGame();
+logWins();
+*/
