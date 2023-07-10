@@ -75,7 +75,7 @@ function playGame() {
   }
 } /*end of the function playGame()*/
 
-
+/*
 playGame();
 logWins();
-
+*/
