@@ -1,6 +1,85 @@
-/**
-**This is the Rock, Paper and Scissors console game styles code in plain CSS
-TODO
+body {
+  margin: auto;
+  background-color: #f2afff;
+}
 
-*TODO add a Graphical User Interface with buttons and text at the STYLE.CSS file
-*/
+/*Title style*/
+.title-div {
+  text-align: center;
+  background-color: rgb(254, 255, 255);
+  padding: 15px;
+  line-height: 1.6;
+  margin: 15px;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.8);
+  border-radius: 20px;
+}
+h1 {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-size: 60px;
+}
+.subtitle {
+  font-family: "Trebuchet MS", sans-serif;
+}
+
+/*Button Style*/
+.buttons-div {
+  text-align: center;
+  background-color: rgb(255, 254, 254);
+  padding: 15px;
+  line-height: 1.6;
+  margin: 15px;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.8);
+  border-radius: 20px;
+}
+.start-button {
+  background: #0cd7d7;
+  padding: 15px;
+  line-height: 1.6;
+  margin: 15px;
+  box-shadow: 4px 3px 5px rgba(45, 105, 95, 0.6);
+  border-radius: 30px;
+  font-weight: bold;
+  border: 2px solid #0ab5b5;
+}
+
+.start-button:hover {
+  animation-name: a-nimation;
+  animation-duration: 5s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  font-weight: bold;
+  border: 2px solid #0ab5b5;
+}
+
+@keyframes a-nimation {
+  0% {
+    background-color: #0cd7d7;
+  }
+  10% {
+    background-color: #ccffff;
+  }
+  20% {
+    background-color: #0cd7d7;
+  }
+  30% {
+    background-color: #ccffff;
+  }
+  40% {
+    background-color: #0cd7d7;
+  }
+  50% {
+    background-color: #ccffff;
+  }
+  60% {
+    background-color: #0cd7d7;
+  }
+  70% {
+    background-color: #ccffff;
+  }
+  80% {
+    background-color: #0cd7d7;
+  }
+  100% {
+    background-color: #ccffff;
+  }
+}
