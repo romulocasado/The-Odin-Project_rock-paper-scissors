@@ -44,7 +44,55 @@ function playRound(round) {
     roundResults.push(`Computer`);
     console.log(`Round ${round}: You lost this round!`);
   }
+
+  roundVisuals();
 } /*end of the function playRound()*/
+
+function roundVisuals() {
+  const playerSelection = getPlayerChoice();
+  const computerSelection = getComputerChoice();
+
+  const rockPicture = document.createElement(`img`);
+  rockPicture.src = "imgs/Rock.jpg";
+
+  const paperPicture = document.createElement(`img`);
+  paperPicture.src = "imgs/Paper.jpg";
+
+  const scissorsPicture = document.createElement(`img`);
+  scissorsPicture.src = "imgs/Scissors.jpg";
+
+  const matchContainer = document.getElementById(`match-div`);
+  let versusTxt = document.createElement("p");
+  versusTxt.textContent = `X`;
+
+  if (playerSelection === `rock` && computerSelection === `rock`) {
+    matchContainer.appendChild(rockPicture);
+    matchContainer.appendChild(versusTxt);
+    matchContainer.appendChild(rockPicture.cloneNode(true));
+    matchContainer.innerHTML(`<br>`);
+    matchContainer.textContent = `It's a tie!`;
+  } else if (playerSelection === `paper` && computerSelection === `paper`) {
+    matchContainer.appendChild(paperPicture);
+    matchContainer.appendChild(versusTxt);
+    matchContainer.appendChild(paperPicture.cloneNode(true));
+    matchContainer.innerHTML(`<br>`);
+    matchContainer.textContent = `It's a tie!`;
+  } else if (
+    playerSelection === `scissors` &&
+    computerSelection === `scissors`
+  ) {
+    matchContainer.appendChild(scissorsPicture);
+    matchContainer.appendChild(versusTxt);
+    matchContainer.appendChild(scissorsPicture.cloneNode(true));
+    matchContainer.innerHTML(`<br>`);
+    matchContainer.textContent = `It's a tie!`;
+  }
+}
+/**
+// Append the image to a container element
+var container = document.getElementById('container');
+container.appendChild(img);
+   */
 
 function logWins() {
   let playerWins = roundResults.filter((result) => result === "Player").length;
@@ -75,7 +123,7 @@ function playGame() {
   }
 } /*end of the function playGame()*/
 
-/*
-playGame();
-logWins();
-*/
+function gameExecution() {
+  playGame();
+  logWins();
+}

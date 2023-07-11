@@ -21,7 +21,7 @@ h1 {
   font-family: "Trebuchet MS", sans-serif;
 }
 
-/*Button Style*/
+/*Button Div*/
 .buttons-div {
   text-align: center;
   background-color: rgb(255, 254, 254);
@@ -82,4 +82,21 @@ h1 {
   100% {
     background-color: #ccffff;
   }
+}
+/*Match Container*/
+#match-div {
+  text-align: center;
+  background-color: rgb(255, 254, 254);
+  padding: 15px;
+  line-height: 1.6;
+  margin: 15px;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.8);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#match-div img {
+  margin: 0 10px; /* Adjust the margin as needed */
 }
