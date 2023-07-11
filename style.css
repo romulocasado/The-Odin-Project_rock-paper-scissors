@@ -25,14 +25,14 @@ h1 {
 }
 
 .start-button {
-  background: #fab7c8;
+  background: #62c3d9;
   padding: 15px;
   line-height: 1.6;
   margin: 15px;
-  box-shadow: 4px 3px 5px rgba(107, 55, 79, 0.6);
+  box-shadow: 4px 3px 5px rgba(43, 173, 190, 0.6);
   border-radius: 30px;
   font-weight: bold;
-  border: 2px solid #c993b2;
+  border: 2px solid #7ea5e0;
   font-size: 50px;
   font-family: "Audiowide", sans-serif;
 }
@@ -43,351 +43,133 @@ h1 {
 
 .start-button:hover {
   animation-name: button-glow;
-  animation-duration: .8s;
+  animation-duration: .5s;
   animation-fill-mode: forwards;
   animation-iteration-count: infinite;
   font-weight: bold;
-  border: 2px solid #fab7c8;
+  border: 2px solid #3faae9;
 }
-/*
-Everytime we reach another 5% in the keyframes, the pattern inside the background linear gradient also changes, so the position of the colors move another 10% inside the background linear gradient
-So the position of the color should change too 
-*/
+
 @keyframes button-glow {
   0% {
-    background: linear-gradient(
-      to right,
-      #fab7c8 0%,
-      #e994a9 10%,
-      #d87991 20%,
-      #d86582 30%,
-      #d87991 40%,
-      #e994a9 50%,
-      #fab7c8 60%,
-      #e994a9 70%,
-      #d87991 80%,
-      #d86582 90%,
-      #d87991 100%
-    );
-  }
-  5% {
-    background: linear-gradient(
-      to right,
-      #e994a9 0%,
-      #fab7c8 10%,
-      #e994a9 20%,
-      #d87991 30%,
-      #d86582 40%,
-      #d87991 50%,
-      #e994a9 60%,
-      #fab7c8 70%,
-      #e994a9 80%,
-      #d87991 90%,
-      #d86582 100%
+    background: radial-gradient(
+      circle at center,
+      #0a3852 0%,
+      #004ca1 20%,
+      #009cc2 40%,
+      #1e90ff 60%,
+      #009cc2 80%,
+      #004ca1 100%
     );
   }
   10% {
-    background: linear-gradient(
-      to right,
-      #d87991 0%,
-      #e994a9 10%,
-      #fab7c8 20%,
-      #e994a9 30%,
-      #d87991 40%,
-      #d86582 50%,
-      #d87991 60%,
-      #e994a9 70%,
-      #fab7c8 80%,
-      #e994a9 90%,
-      #d87991 100%
-    );
-  }
-  15% {
-    background: linear-gradient(
-      to right,
-      #d86582 0%,
-      #d87991 10%,
-      #e994a9 20%,
-      #fab7c8 30%,
-      #e994a9 40%,
-      #d87991 50%,
-      #d86582 60%,
-      #d87991 70%,
-      #e994a9 80%,
-      #fab7c8 90%,
-      #e994a9 100%
+    background: radial-gradient(
+      circle at center,
+      #004ca1 0%,
+      #009cc2 20%,
+      #1e90ff 40%,
+      #00bfff 60%,
+      #1e90ff 80%,
+      #009cc2 100%
     );
   }
   20% {
-    background: linear-gradient(
-      to right,
-      #d87991 0%,
-      #d86582 10%,
-      #d87991 20%,
-      #e994a9 30%,
-      #fab7c8 40%,
-      #e994a9 50%,
-      #d87991 60%,
-      #d86582 70%,
-      #d87991 80%,
-      #e994a9 90%,
-      #fab7c8 100%
-    );
-  }
-  25% {
-    background: linear-gradient(
-      to right,
-      #e994a9 0%,
-      #d87991 10%,
-      #d86582 20%,
-      #d87991 30%,
-      #e994a9 40%,
-      #fab7c8 50%,
-      #e994a9 60%,
-      #d87991 70%,
-      #d86582 80%,
-      #d87991 90%,
-      #e994a9 100%
+    background: radial-gradient(
+      circle at center,
+      #009cc2 0%,
+      #1e90ff 20%,
+      #00bfff 40%,
+      #87cefa 60%,
+      #00bfff 80%,
+      #1e90ff 100%
     );
   }
   30% {
-    background: linear-gradient(
-      to right,
-      #fab7c8 0%,
-      #e994a9 10%,
-      #d87991 20%,
-      #d86582 30%,
-      #d87991 40%,
-      #e994a9 50%,
-      #fab7c8 60%,
-      #e994a9 70%,
-      #d87991 80%,
-      #d86582 90%,
-      #d87991 100%
-    );
-  }
-  35% {
-    background: linear-gradient(
-      to right,
-      #e994a9 0%,
-      #fab7c8 10%,
-      #e994a9 20%,
-      #d87991 30%,
-      #d86582 40%,
-      #d87991 50%,
-      #e994a9 60%,
-      #fab7c8 70%,
-      #e994a9 80%,
-      #d87991 90%,
-      #d86582 100%
+    background: radial-gradient(
+      circle at center,
+      #1e90ff 0%,
+      #00bfff 20%,
+      #87cefa 40%,
+      #add8e6 60%,
+      #87cefa 80%,
+      #00bfff 100%
     );
   }
   40% {
-    background: linear-gradient(
-      to right,
-      #d87991 0%,
-      #e994a9 10%,
-      #fab7c8 20%,
-      #e994a9 30%,
-      #d87991 40%,
-      #d86582 50%,
-      #d87991 60%,
-      #e994a9 70%,
-      #fab7c8 80%,
-      #e994a9 90%,
-      #d87991 100%
-    );
-  }
-  45% {
-    background: linear-gradient(
-      to right,
-      #d86582 0%,
-      #d87991 10%,
-      #e994a9 20%,
-      #fab7c8 30%,
-      #e994a9 40%,
-      #d87991 50%,
-      #d86582 60%,
-      #d87991 70%,
-      #e994a9 80%,
-      #fab7c8 90%,
-      #e994a9 100%
+    background: radial-gradient(
+      circle at center,
+      #00bfff 0%,
+      #87cefa 20%,
+      #add8e6 40%,
+      #e0ffff 60%,
+      #add8e6 80%,
+      #87cefa 100%
     );
   }
   50% {
-    background: linear-gradient(
-      to right,
-      #d87991 0%,
-      #d86582 10%,
-      #d87991 20%,
-      #e994a9 30%,
-      #fab7c8 40%,
-      #e994a9 50%,
-      #d87991 60%,
-      #d86582 70%,
-      #d87991 80%,
-      #e994a9 90%,
-      #fab7c8 100%
-    );
-  }
-  55% {
-    background: linear-gradient(
-      to right,
-      #e994a9 0%,
-      #d87991 10%,
-      #d86582 20%,
-      #d87991 30%,
-      #e994a9 40%,
-      #fab7c8 50%,
-      #e994a9 60%,
-      #d87991 70%,
-      #d86582 80%,
-      #d87991 90%,
-      #e994a9 100%
+    background: radial-gradient(
+      circle at center,
+      #87cefa 0%,
+      #add8e6 20%,
+      #e0ffff 40%,
+      #00bfff 60%,
+      #e0ffff 80%,
+      #add8e6 100%
     );
   }
   60% {
-    background: linear-gradient(
-      to right,
-      #fab7c8 0%,
-      #e994a9 10%,
-      #d87991 20%,
-      #d86582 30%,
-      #d87991 40%,
-      #e994a9 50%,
-      #fab7c8 60%,
-      #e994a9 70%,
-      #d87991 80%,
-      #d86582 90%,
-      #d87991 100%
-    );
-  }
-  65% {
-    background: linear-gradient(
-      to right,
-      #e994a9 0%,
-      #fab7c8 10%,
-      #e994a9 20%,
-      #d87991 30%,
-      #d86582 40%,
-      #d87991 50%,
-      #e994a9 60%,
-      #fab7c8 70%,
-      #e994a9 80%,
-      #d87991 90%,
-      #d86582 100%
+    background: radial-gradient(
+      circle at center,
+      #add8e6 0%,
+      #e0ffff 20%,
+      #00bfff 40%,
+      #1e90ff 60%,
+      #00bfff 80%,
+      #e0ffff 100%
     );
   }
   70% {
-    background: linear-gradient(
-      to right,
-      #d87991 0%,
-      #e994a9 10%,
-      #fab7c8 20%,
-      #e994a9 30%,
-      #d87991 40%,
-      #d86582 50%,
-      #d87991 60%,
-      #e994a9 70%,
-      #fab7c8 80%,
-      #e994a9 90%,
-      #d87991 100%
-    );
-  }
-  75% {
-    background: linear-gradient(
-      to right,
-      #d86582 0%,
-      #d87991 10%,
-      #e994a9 20%,
-      #fab7c8 30%,
-      #e994a9 40%,
-      #d87991 50%,
-      #d86582 60%,
-      #d87991 70%,
-      #e994a9 80%,
-      #fab7c8 90%,
-      #e994a9 100%
+    background: radial-gradient(
+      circle at center,
+      #e0ffff 0%,
+      #00bfff 20%,
+      #1e90ff 40%,
+      #009cc2 60%,
+      #1e90ff 80%,
+      #00bfff 100%
     );
   }
   80% {
-    background: linear-gradient(
-      to right,
-      #d87991 0%,
-      #d86582 10%,
-      #d87991 20%,
-      #e994a9 30%,
-      #fab7c8 40%,
-      #e994a9 50%,
-      #d87991 60%,
-      #d86582 70%,
-      #d87991 80%,
-      #e994a9 90%,
-      #fab7c8 100%
-    );
-  }
-  85% {
-    background: linear-gradient(
-      to right,
-      #e994a9 0%,
-      #d87991 10%,
-      #d86582 20%,
-      #d87991 30%,
-      #e994a9 40%,
-      #fab7c8 50%,
-      #e994a9 60%,
-      #d87991 70%,
-      #d86582 80%,
-      #d87991 90%,
-      #e994a9 100%
+    background: radial-gradient(
+      circle at center,
+      #00bfff 0%,
+      #1e90ff 20%,
+      #009cc2 40%,
+      #004ca1 60%,
+      #009cc2 80%,
+      #1e90ff 100%
     );
   }
   90% {
-    background: linear-gradient(
-      to right,
-      #fab7c8 0%,
-      #e994a9 10%,
-      #d87991 20%,
-      #d86582 30%,
-      #d87991 40%,
-      #e994a9 50%,
-      #fab7c8 60%,
-      #e994a9 70%,
-      #d87991 80%,
-      #d86582 90%,
-      #d87991 100%
-    );
-  }
-  95% {
-    background: linear-gradient(
-      to right,
-      #e994a9 0%,
-      #fab7c8 10%,
-      #e994a9 20%,
-      #d87991 30%,
-      #d86582 40%,
-      #d87991 50%,
-      #e994a9 60%,
-      #fab7c8 70%,
-      #e994a9 80%,
-      #d87991 90%,
-      #d86582 100%
+    background: radial-gradient(
+      circle at center,
+      #1e90ff 0%,
+      #009cc2 20%,
+      #004ca1 40%,
+      #0a3852 60%,
+      #004ca1 80%,
+      #009cc2 100%
     );
   }
   100% {
-    background: linear-gradient(
-      to right,
-      #d87991 0%,
-      #e994a9 10%,
-      #fab7c8 20%,
-      #e994a9 30%,
-      #d87991 40%,
-      #d86582 50%,
-      #d87991 60%,
-      #e994a9 70%,
-      #fab7c8 80%,
-      #e994a9 90%,
-      #d87991 100%
+    background: radial-gradient(
+      circle at center,
+      #009cc2 0%,
+      #004ca1 20%,
+      #0a3852 40%,
+      #004ca1 60%,
+      #0a3852 80%,
+      #004ca1 100%
     );
   }
 }
@@ -406,6 +188,10 @@ So the position of the color should change too
   margin: 15px;
   box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.8);
   border-radius: 20px;
+  font-family: 'Kanit', sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+
   /*
   display: flex;
   flex-direction: column;
