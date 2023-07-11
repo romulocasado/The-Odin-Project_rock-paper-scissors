@@ -1,103 +1,465 @@
 body {
   margin: auto;
-  background-color: #f2afff;
+  background-color: #fab7c8;
 }
 
 /*Title style*/
 .title-div {
   text-align: center;
-  background-color: rgb(254, 255, 255);
+  background: linear-gradient(
+    to right,
+    #427992 0%,
+    #d9f0ff 15%,
+    #d9f0ff 85%,
+    #427992
+  );
   padding: 15px;
   line-height: 1.6;
   margin: 15px;
   box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.8);
   border-radius: 20px;
+  font-family: "Audiowide", sans-serif;
 }
 h1 {
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-  font-size: 60px;
-}
-.subtitle {
-  font-family: "Trebuchet MS", sans-serif;
+  font-size: 80px;
 }
 
-/*Button Div*/
-.buttons-div {
-  text-align: center;
-  background-color: rgb(255, 254, 254);
-  padding: 15px;
-  line-height: 1.6;
-  margin: 15px;
-  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.8);
-  border-radius: 20px;
-}
 .start-button {
-  background: #0cd7d7;
+  background: #fab7c8;
   padding: 15px;
   line-height: 1.6;
   margin: 15px;
-  box-shadow: 4px 3px 5px rgba(45, 105, 95, 0.6);
+  box-shadow: 4px 3px 5px rgba(107, 55, 79, 0.6);
   border-radius: 30px;
   font-weight: bold;
-  border: 2px solid #0ab5b5;
+  border: 2px solid #c993b2;
+  font-size: 50px;
+  font-family: "Audiowide", sans-serif;
+}
+.subtitle {
+  font-size: 30px;
+  font-family: 'Kanit', sans-serif;
 }
 
 .start-button:hover {
-  animation-name: a-nimation;
-  animation-duration: 5s;
+  animation-name: button-glow;
+  animation-duration: .8s;
   animation-fill-mode: forwards;
   animation-iteration-count: infinite;
   font-weight: bold;
-  border: 2px solid #0ab5b5;
+  border: 2px solid #fab7c8;
 }
-
-@keyframes a-nimation {
+/*
+Everytime we reach another 5% in the keyframes, the pattern inside the background linear gradient also changes, so the position of the colors move another 10% inside the background linear gradient
+So the position of the color should change too 
+*/
+@keyframes button-glow {
   0% {
-    background-color: #0cd7d7;
+    background: linear-gradient(
+      to right,
+      #fab7c8 0%,
+      #e994a9 10%,
+      #d87991 20%,
+      #d86582 30%,
+      #d87991 40%,
+      #e994a9 50%,
+      #fab7c8 60%,
+      #e994a9 70%,
+      #d87991 80%,
+      #d86582 90%,
+      #d87991 100%
+    );
+  }
+  5% {
+    background: linear-gradient(
+      to right,
+      #e994a9 0%,
+      #fab7c8 10%,
+      #e994a9 20%,
+      #d87991 30%,
+      #d86582 40%,
+      #d87991 50%,
+      #e994a9 60%,
+      #fab7c8 70%,
+      #e994a9 80%,
+      #d87991 90%,
+      #d86582 100%
+    );
   }
   10% {
-    background-color: #ccffff;
+    background: linear-gradient(
+      to right,
+      #d87991 0%,
+      #e994a9 10%,
+      #fab7c8 20%,
+      #e994a9 30%,
+      #d87991 40%,
+      #d86582 50%,
+      #d87991 60%,
+      #e994a9 70%,
+      #fab7c8 80%,
+      #e994a9 90%,
+      #d87991 100%
+    );
+  }
+  15% {
+    background: linear-gradient(
+      to right,
+      #d86582 0%,
+      #d87991 10%,
+      #e994a9 20%,
+      #fab7c8 30%,
+      #e994a9 40%,
+      #d87991 50%,
+      #d86582 60%,
+      #d87991 70%,
+      #e994a9 80%,
+      #fab7c8 90%,
+      #e994a9 100%
+    );
   }
   20% {
-    background-color: #0cd7d7;
+    background: linear-gradient(
+      to right,
+      #d87991 0%,
+      #d86582 10%,
+      #d87991 20%,
+      #e994a9 30%,
+      #fab7c8 40%,
+      #e994a9 50%,
+      #d87991 60%,
+      #d86582 70%,
+      #d87991 80%,
+      #e994a9 90%,
+      #fab7c8 100%
+    );
+  }
+  25% {
+    background: linear-gradient(
+      to right,
+      #e994a9 0%,
+      #d87991 10%,
+      #d86582 20%,
+      #d87991 30%,
+      #e994a9 40%,
+      #fab7c8 50%,
+      #e994a9 60%,
+      #d87991 70%,
+      #d86582 80%,
+      #d87991 90%,
+      #e994a9 100%
+    );
   }
   30% {
-    background-color: #ccffff;
+    background: linear-gradient(
+      to right,
+      #fab7c8 0%,
+      #e994a9 10%,
+      #d87991 20%,
+      #d86582 30%,
+      #d87991 40%,
+      #e994a9 50%,
+      #fab7c8 60%,
+      #e994a9 70%,
+      #d87991 80%,
+      #d86582 90%,
+      #d87991 100%
+    );
+  }
+  35% {
+    background: linear-gradient(
+      to right,
+      #e994a9 0%,
+      #fab7c8 10%,
+      #e994a9 20%,
+      #d87991 30%,
+      #d86582 40%,
+      #d87991 50%,
+      #e994a9 60%,
+      #fab7c8 70%,
+      #e994a9 80%,
+      #d87991 90%,
+      #d86582 100%
+    );
   }
   40% {
-    background-color: #0cd7d7;
+    background: linear-gradient(
+      to right,
+      #d87991 0%,
+      #e994a9 10%,
+      #fab7c8 20%,
+      #e994a9 30%,
+      #d87991 40%,
+      #d86582 50%,
+      #d87991 60%,
+      #e994a9 70%,
+      #fab7c8 80%,
+      #e994a9 90%,
+      #d87991 100%
+    );
+  }
+  45% {
+    background: linear-gradient(
+      to right,
+      #d86582 0%,
+      #d87991 10%,
+      #e994a9 20%,
+      #fab7c8 30%,
+      #e994a9 40%,
+      #d87991 50%,
+      #d86582 60%,
+      #d87991 70%,
+      #e994a9 80%,
+      #fab7c8 90%,
+      #e994a9 100%
+    );
   }
   50% {
-    background-color: #ccffff;
+    background: linear-gradient(
+      to right,
+      #d87991 0%,
+      #d86582 10%,
+      #d87991 20%,
+      #e994a9 30%,
+      #fab7c8 40%,
+      #e994a9 50%,
+      #d87991 60%,
+      #d86582 70%,
+      #d87991 80%,
+      #e994a9 90%,
+      #fab7c8 100%
+    );
+  }
+  55% {
+    background: linear-gradient(
+      to right,
+      #e994a9 0%,
+      #d87991 10%,
+      #d86582 20%,
+      #d87991 30%,
+      #e994a9 40%,
+      #fab7c8 50%,
+      #e994a9 60%,
+      #d87991 70%,
+      #d86582 80%,
+      #d87991 90%,
+      #e994a9 100%
+    );
   }
   60% {
-    background-color: #0cd7d7;
+    background: linear-gradient(
+      to right,
+      #fab7c8 0%,
+      #e994a9 10%,
+      #d87991 20%,
+      #d86582 30%,
+      #d87991 40%,
+      #e994a9 50%,
+      #fab7c8 60%,
+      #e994a9 70%,
+      #d87991 80%,
+      #d86582 90%,
+      #d87991 100%
+    );
+  }
+  65% {
+    background: linear-gradient(
+      to right,
+      #e994a9 0%,
+      #fab7c8 10%,
+      #e994a9 20%,
+      #d87991 30%,
+      #d86582 40%,
+      #d87991 50%,
+      #e994a9 60%,
+      #fab7c8 70%,
+      #e994a9 80%,
+      #d87991 90%,
+      #d86582 100%
+    );
   }
   70% {
-    background-color: #ccffff;
+    background: linear-gradient(
+      to right,
+      #d87991 0%,
+      #e994a9 10%,
+      #fab7c8 20%,
+      #e994a9 30%,
+      #d87991 40%,
+      #d86582 50%,
+      #d87991 60%,
+      #e994a9 70%,
+      #fab7c8 80%,
+      #e994a9 90%,
+      #d87991 100%
+    );
+  }
+  75% {
+    background: linear-gradient(
+      to right,
+      #d86582 0%,
+      #d87991 10%,
+      #e994a9 20%,
+      #fab7c8 30%,
+      #e994a9 40%,
+      #d87991 50%,
+      #d86582 60%,
+      #d87991 70%,
+      #e994a9 80%,
+      #fab7c8 90%,
+      #e994a9 100%
+    );
   }
   80% {
-    background-color: #0cd7d7;
+    background: linear-gradient(
+      to right,
+      #d87991 0%,
+      #d86582 10%,
+      #d87991 20%,
+      #e994a9 30%,
+      #fab7c8 40%,
+      #e994a9 50%,
+      #d87991 60%,
+      #d86582 70%,
+      #d87991 80%,
+      #e994a9 90%,
+      #fab7c8 100%
+    );
+  }
+  85% {
+    background: linear-gradient(
+      to right,
+      #e994a9 0%,
+      #d87991 10%,
+      #d86582 20%,
+      #d87991 30%,
+      #e994a9 40%,
+      #fab7c8 50%,
+      #e994a9 60%,
+      #d87991 70%,
+      #d86582 80%,
+      #d87991 90%,
+      #e994a9 100%
+    );
+  }
+  90% {
+    background: linear-gradient(
+      to right,
+      #fab7c8 0%,
+      #e994a9 10%,
+      #d87991 20%,
+      #d86582 30%,
+      #d87991 40%,
+      #e994a9 50%,
+      #fab7c8 60%,
+      #e994a9 70%,
+      #d87991 80%,
+      #d86582 90%,
+      #d87991 100%
+    );
+  }
+  95% {
+    background: linear-gradient(
+      to right,
+      #e994a9 0%,
+      #fab7c8 10%,
+      #e994a9 20%,
+      #d87991 30%,
+      #d86582 40%,
+      #d87991 50%,
+      #e994a9 60%,
+      #fab7c8 70%,
+      #e994a9 80%,
+      #d87991 90%,
+      #d86582 100%
+    );
   }
   100% {
-    background-color: #ccffff;
+    background: linear-gradient(
+      to right,
+      #d87991 0%,
+      #e994a9 10%,
+      #fab7c8 20%,
+      #e994a9 30%,
+      #d87991 40%,
+      #d86582 50%,
+      #d87991 60%,
+      #e994a9 70%,
+      #fab7c8 80%,
+      #e994a9 90%,
+      #d87991 100%
+    );
   }
 }
 /*Match Container*/
 #match-div {
   text-align: center;
-  background-color: rgb(255, 254, 254);
+  background: linear-gradient(
+    to right,
+    #427992 0%,
+    #d9f0ff 25%,
+    #d9f0ff 75%,
+    #427992
+  );
   padding: 15px;
   line-height: 1.6;
   margin: 15px;
   box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.8);
   border-radius: 20px;
+  /*
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  */
 }
 
 #match-div i {
-  margin: 0 10px; /* Adjust the margin as needed */
-  font-size: 50px;
+  margin: 25px; /* Adjust the margin as needed */
+  font-size: 80px;
+}
+
+#match-div i:hover {
+  animation-name: shake;
+  animation-duration: 40s;
+  animation-iteration-count: infinite;
+  animation: shake 3s infinite;
+}
+
+@keyframes shake {
+  0% {
+    color: #427992;
+  }
+  10% {
+    color: #242b50;
+    transform: rotate(10deg);
+  }
+  20% {
+    color: #427992;
+  }
+  30% {
+    color: #242b50;
+    transform: rotate(-10deg);
+  }
+  40% {
+    color: #427992;
+  }
+  50% {
+    color: #242b50;
+    transform: rotate(10deg);
+  }
+  60% {
+    color: #427992;
+  }
+  70% {
+    color: #242b50;
+    transform: rotate(-10deg);
+  }
+  80% {
+    color: #427992;
+  }
+  100% {
+    color: #242b50;
+    transform: rotate(10deg);
+  }
 }

@@ -66,9 +66,12 @@ function visuals() {
   scissorsLost.className = "fa-sharp fa-regular fa-hand-scissors";
 
   const matchContainer = document.getElementById(`match-div`);
-  matchContainer.appendChild(rockWins);
-  matchContainer.appendChild(paperWins);
-  matchContainer.appendChild(scissorsWins);
+  matchContainer.textContent = `CHOOSE BETWEEN ONE OF THE OPTIONS`;
+  const lineBreak = document.createElement("br");
+  matchContainer.appendChild(lineBreak);
+  matchContainer.appendChild(rockLost);
+  matchContainer.appendChild(paperLost);
+  matchContainer.appendChild(scissorsLost);
 } /* end of the function visuals() */
 /**
 <i class="fa-sharp fa-regular fa-hand-scissors fa-beat-fade"></i>
@@ -154,8 +157,6 @@ function playGame() {
     playRound(roundNumber);
   }
 } /*end of the function playGame()*/
-
-
 
 /*
 function gameExecution() {
