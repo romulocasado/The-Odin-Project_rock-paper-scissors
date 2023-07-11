@@ -44,22 +44,55 @@ function playRound(round) {
     roundResults.push(`Computer`);
     console.log(`Round ${round}: You lost this round!`);
   }
-
-  roundVisuals();
 } /*end of the function playRound()*/
 
+function visuals() {
+  //const playerSelection = getPlayerChoice();
+  //const computerSelection = getComputerChoice();
+
+  let rockWins = document.createElement("i");
+  rockWins.className = "fa-sharp fa-regular fa-hand-back-fist fa-beat-fade";
+  let rockLost = document.createElement("i");
+  rockLost.className = "fa-sharp fa-regular fa-hand-back-fist";
+
+  let paperWins = document.createElement("i");
+  paperWins.className = "fa-sharp fa-regular fa-hand fa-beat-fade";
+  let paperLost = document.createElement("i");
+  paperLost.className = "fa-sharp fa-regular fa-hand";
+
+  let scissorsWins = document.createElement("i");
+  scissorsWins.className = "fa-sharp fa-regular fa-hand-scissors fa-beat-fade";
+  let scissorsLost = document.createElement("i");
+  scissorsLost.className = "fa-sharp fa-regular fa-hand-scissors";
+
+  const matchContainer = document.getElementById(`match-div`);
+  matchContainer.appendChild(rockWins);
+  matchContainer.appendChild(paperWins);
+  matchContainer.appendChild(scissorsWins);
+} /* end of the function visuals() */
+/**
+<i class="fa-sharp fa-regular fa-hand-scissors fa-beat-fade"></i>
+ */
+visuals();
+/*
 function roundVisuals() {
   const playerSelection = getPlayerChoice();
   const computerSelection = getComputerChoice();
 
-  const rockPicture = document.createElement(`img`);
-  rockPicture.src = "imgs/Rock.jpg";
+  const rockPicture = document.createElement(
+    `<i class="fa-sharp fa-light fa-hand-back-fist fa-bounce"></i>`
+  );
+  // rockPicture.src = "imgs/Rock.jpg";
 
-  const paperPicture = document.createElement(`img`);
-  paperPicture.src = "imgs/Paper.jpg";
+  const paperPicture = document.createElement(
+    `<i class="fa-sharp fa-light fa-hand-back-fist fa-bounce"></i>`
+  );
+  // paperPicture.src = "imgs/Paper.jpg";
 
-  const scissorsPicture = document.createElement(`img`);
-  scissorsPicture.src = "imgs/Scissors.jpg";
+  const scissorsPicture = document.createElement(
+    `<i class="fa-sharp fa-light fa-hand-back-fist fa-bounce"></i>`
+  );
+  // scissorsPicture.src = "imgs/Scissors.jpg";
 
   const matchContainer = document.getElementById(`match-div`);
   let versusTxt = document.createElement("p");
@@ -88,11 +121,10 @@ function roundVisuals() {
     matchContainer.textContent = `It's a tie!`;
   }
 }
-/**
-// Append the image to a container element
+
 var container = document.getElementById('container');
 container.appendChild(img);
-   */
+*/
 
 function logWins() {
   let playerWins = roundResults.filter((result) => result === "Player").length;
@@ -118,12 +150,16 @@ function logWins() {
 }
 
 function playGame() {
-  for (let roundNumber = 0; roundNumber < 5; roundNumber++) {
+  for (let roundNumber = 1; roundNumber <= 5; roundNumber++) {
     playRound(roundNumber);
   }
 } /*end of the function playGame()*/
 
+
+
+/*
 function gameExecution() {
   playGame();
   logWins();
 }
+*/

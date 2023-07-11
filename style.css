@@ -97,6 +97,7 @@ h1 {
   justify-content: center;
 }
 
-#match-div img {
+#match-div i {
   margin: 0 10px; /* Adjust the margin as needed */
+  font-size: 50px;
 }
