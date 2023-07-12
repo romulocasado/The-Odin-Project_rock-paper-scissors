@@ -1,5 +1,4 @@
 const gameOptions = [`rock`, `paper`, `scissors`];
-let roundResults = [];
 const lineBreak = document.createElement("br");
 
 function getComputerChoice() {
@@ -25,6 +24,7 @@ function showOptions() {
   const choiceContainer = document.createElement("div");
   choiceContainer.id = "choice-div";
   choiceContainer.textContent = `CHOOSE BETWEEN ONE OF THE FOLLOWING OPTIONS`;
+
   choiceContainer.appendChild(lineBreak);
   choiceContainer.appendChild(rockLost);
   choiceContainer.appendChild(paperLost);
@@ -65,6 +65,48 @@ function playRound() {
   let waitingIcon2 = document.createElement("i");
   waitingIcon2.className = "fa-solid fa-question fa-spin";
 
+  const matchContainer = document.createElement("div");
+  matchContainer.id = "match-div";
+
+  let resultText = document.createElement("p");
+  resultText.id = "result-text";
+  resultText.textContent = `IT'S A TIE!`;
+
+  document.body.appendChild(matchContainer);
+  matchContainer.textContent = `RESULTS`;
+  matchContainer.appendChild(lineBreak);
+  matchContainer.appendChild(waitingIcon);
+  matchContainer.appendChild(versusIcon);
+  matchContainer.appendChild(waitingIcon2);
+  matchContainer.appendChild(resultText);
+  
+
+  matchScenarios(
+    playerSelection,
+    computerSelection,
+    waitingIcon,
+    waitingIcon2,
+    resultText
+  );
+} /* end of the function playRound() */
+
+function matchScenarios(
+  playerSelection,
+  computerSelection,
+  waitingIcon,
+  waitingIcon2,
+  resultText
+) {
+  if (playerSelection === `rock` && computerSelection === `rock`) {
+    resultText.textContent = `it's aaaaaaaaaaaa TIE!`;
+    waitingIcon.className =
+      "fa-sharp fa-regular fa-hand-back-fist fa-beat-fade";
+    waitingIcon2.className =
+      "fa-sharp fa-regular fa-hand-back-fist fa-beat-fade";
+  }
+} /* end of the function matchScenarios() */
+
+/*
   let rockWins = document.createElement("i");
   rockWins.className = "fa-sharp fa-regular fa-hand-back-fist fa-beat-fade";
 
@@ -73,20 +115,7 @@ function playRound() {
 
   let scissorsWins = document.createElement("i");
   scissorsWins.className = "fa-sharp fa-regular fa-hand-scissors fa-beat-fade";
-
-  const matchContainer = document.createElement("div");
-  matchContainer.id = "match-div";
-  document.body.appendChild(matchContainer);
-  matchContainer.textContent = `RESULTS`;
-  matchContainer.appendChild(lineBreak);
-  matchContainer.appendChild(waitingIcon);
-  matchContainer.appendChild(versusIcon);
-  matchContainer.appendChild(waitingIcon2);
-
-  matchScenarios();
-} /* end of the function playRound() */
-
-function matchScenarios() {} /* end of the function matchScenarios() */
+*/
 
 showOptions();
-getPlayerChoice();
+playRound();
