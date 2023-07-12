@@ -1,6 +1,6 @@
 body {
   margin: auto;
-  background-color: #fab7c8;
+  background-color: #27e2c3;
 }
 
 /*Title style*/
@@ -174,13 +174,13 @@ h1 {
   }
 }
 /*Match Container*/
-#match-div {
+#choice-div {
   text-align: center;
   background: linear-gradient(
     to right,
     #427992 0%,
     #d9f0ff 25%,
-    #d9f0ff 75%,
+    #d9f7ff 75%,
     #427992
   );
   padding: 15px;
@@ -200,12 +200,12 @@ h1 {
   */
 }
 
-#match-div i {
+#choice-div i {
   margin: 25px; /* Adjust the margin as needed */
   font-size: 80px;
 }
 
-#match-div i:hover {
+#choice-div i:hover {
   animation-name: shake;
   animation-duration: 40s;
   animation-iteration-count: infinite;
@@ -244,8 +244,12 @@ h1 {
   80% {
     color: #427992;
   }
-  100% {
+  90% {
     color: #242b50;
     transform: rotate(10deg);
+  }
+  100% {
+    color: #427992;
+    
   }
 }
