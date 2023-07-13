@@ -252,8 +252,8 @@ h1 {
     
   }
 }/*end of choice-container style*/
-/*match-container style*/
-#match-div {
+/*results-container style*/
+#results-div {
   width: 500px; /* Adjust the width as needed */
   margin: 0 auto;
   text-align: center;
@@ -268,12 +268,12 @@ h1 {
   font-weight: bold;
   border: 6px solid #1c2736;
 }
-#match-div i {
+#results-div i {
   margin: 25px;
   font-size: 50px;
   color: #1c2736;
 }
-#match-div p {
+#results-div p {
   font-size: 25px;
   font-family: 'Rubik Dirt', cursive;
   color: #1c2736;

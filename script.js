@@ -32,7 +32,6 @@ function getPlayerChoice(callback) {
   choiceContainer.appendChild(paperIcon);
   choiceContainer.appendChild(scissorsIcon);
   document.body.appendChild(choiceContainer);
-
   /* 
   when using a callback function in this approach, we pass a separate callback function to getPlayerChoice, and within the event listeners, we call that function with the chosen option as an argument, like callback("rock");.
   */
@@ -53,7 +52,44 @@ function getPlayerChoice(callback) {
   });
 } /* end of the function getPlayerChoice() */
 
-getPlayerChoice((choice) => {
-  playerSelection = choice;
+function playGame(playerSelection, computerSelection) {
+  // creating the icons the player will see in the Results container
+  let versusIcon = document.createElement("i");
+  versusIcon.className = "fa-solid fa-x";
+
+  let waitingIcon1 = document.createElement("i");
+  waitingIcon1.className = "fa-solid fa-question fa-spin";
+  let waitingIcon2 = document.createElement("i");
+  waitingIcon2.className = "fa-solid fa-question fa-spin";
+
+  /*
+*  These are class names that will be implemented depending on the conditions of the game, where they will change the waitingIcon 1 and 2 to the corresponding match icons
+
+  .className = "fa-sharp fa-regular fa-hand-back-fist fa-beat-fade";
+
+  .className = "fa-sharp fa-regular fa-hand fa-beat-fade";
+
+  .className = "fa-sharp fa-regular fa-hand-scissors fa-beat-fade";
+*/
+
+  const resultsContainer = document.createElement("div");
+  resultsContainer.id = "results-div";
+
+  let resultText = document.createElement("p");
+  resultText.id = "result-text";
+  resultText.textContent = `IT'S A TIE!`;
+
+  document.body.appendChild(resultsContainer);
+  resultsContainer.textContent = `RESULTS`;
+  resultsContainer.appendChild(lineBreak);
+  resultsContainer.appendChild(waitingIcon1);
+  resultsContainer.appendChild(versusIcon);
+  resultsContainer.appendChild(waitingIcon2);
+  resultsContainer.appendChild(resultText);
+}
+
+getPlayerChoice((playerSelection) => {
+  const computerSelection = getComputerChoice();
+
   console.log(playerSelection);
 });
