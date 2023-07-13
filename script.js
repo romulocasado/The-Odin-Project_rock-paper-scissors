@@ -52,7 +52,7 @@ function getPlayerChoice(callback) {
   });
 } /* end of the function getPlayerChoice() */
 
-function playGame(playerSelection, computerSelection) {
+function playRound(playerSelection, computerSelection) {
   // creating the icons the player will see in the Results container
   let versusIcon = document.createElement("i");
   versusIcon.className = "fa-solid fa-x";
@@ -61,23 +61,22 @@ function playGame(playerSelection, computerSelection) {
   waitingIcon1.className = "fa-solid fa-question fa-spin";
   let waitingIcon2 = document.createElement("i");
   waitingIcon2.className = "fa-solid fa-question fa-spin";
-
   /*
-*  These are class names that will be implemented depending on the conditions of the game, where they will change the waitingIcon 1 and 2 to the corresponding match icons
+* These are class names that will substitute the ones on waitingIcon 1 and 2 depending on the conditions of the game
 
-  .className = "fa-sharp fa-regular fa-hand-back-fist fa-beat-fade";
+?  .className = "fa-sharp fa-regular fa-hand-back-fist fa-beat-fade";
 
-  .className = "fa-sharp fa-regular fa-hand fa-beat-fade";
+?  .className = "fa-sharp fa-regular fa-hand fa-beat-fade";
 
-  .className = "fa-sharp fa-regular fa-hand-scissors fa-beat-fade";
+?  .className = "fa-sharp fa-regular fa-hand-scissors fa-beat-fade";
+
+* This will swap the waiting icons to the corresponding result icons depending on the conditions of the game
 */
-
   const resultsContainer = document.createElement("div");
   resultsContainer.id = "results-div";
 
   let resultText = document.createElement("p");
   resultText.id = "result-text";
-  resultText.textContent = `IT'S A TIE!`;
 
   document.body.appendChild(resultsContainer);
   resultsContainer.textContent = `RESULTS`;
@@ -85,11 +84,64 @@ function playGame(playerSelection, computerSelection) {
   resultsContainer.appendChild(waitingIcon1);
   resultsContainer.appendChild(versusIcon);
   resultsContainer.appendChild(waitingIcon2);
+  resultsContainer.appendChild(lineBreak);
   resultsContainer.appendChild(resultText);
+
+  if (playerSelection === `rock` && computerSelection === `rock`) {
+    resultText.textContent = `IT'S A TIE!`;
+    waitingIcon1.className = "fa-sharp fa-regular fa-hand-back-fist";
+    waitingIcon2.className = "fa-sharp fa-regular fa-hand-back-fist";
+  } else if (playerSelection === `paper` && computerSelection === `paper`) {
+    resultText.textContent = `IT'S A TIE!`;
+    waitingIcon1.className = "fa-sharp fa-regular fa-hand";
+    waitingIcon2.className = "fa-sharp fa-regular fa-hand";
+  } else if (
+    playerSelection === `scissors` &&
+    computerSelection === `scissors`
+  ) {
+    resultText.textContent = `IT'S A TIE!`;
+    waitingIcon1.className = "fa-sharp fa-regular fa-hand-scissors";
+    waitingIcon2.className = "fa-sharp fa-regular fa-hand-scissors";
+  } else if (playerSelection === `rock` && computerSelection === `paper`) {
+    resultText.textContent = `YOU LOST, Paper SWALLOWS Rock!`;
+    waitingIcon1.className = "fa-sharp fa-regular fa-hand-back-fist";
+    waitingIcon2.className = "fa-sharp fa-regular fa-hand fa-beat-fade";
+  } else if (playerSelection === `rock` && computerSelection === `scissors`) {
+    resultText.textContent = `YOU WON, Rock DESTROYS Scissors!`;
+    waitingIcon1.className =
+      "fa-sharp fa-regular fa-hand-back-fist fa-beat-fade";
+    waitingIcon2.className = "fa-sharp fa-regular fa-hand-scissors";
+  } else if (playerSelection === `scissors` && computerSelection === `paper`) {
+    resultText.textContent = `YOU WON, Scissors SHREDS Paper!`;
+    waitingIcon1.className =
+      "fa-sharp fa-regular fa-hand-scissors fa-beat-fade";
+    waitingIcon2.className = "fa-sharp fa-regular fa-hand";
+  } else if (playerSelection === `scissors` && computerSelection === `rock`) {
+    resultText.textContent = `YOU LOST, Rock DESTROYS Scissors!`;
+    waitingIcon1.className = "fa-sharp fa-regular fa-hand-scissors";
+    waitingIcon2.className =
+      "fa-sharp fa-regular fa-hand-back-fist fa-beat-fade";
+  } else if (playerSelection === `paper` && computerSelection === `rock`) {
+    resultText.textContent = `YOU WON, Paper SWALLOWS Rock!`;
+    waitingIcon1.className = "fa-sharp fa-regular fa-hand fa-beat-fade";
+    waitingIcon2.className = "fa-sharp fa-regular fa-hand-back-fist";
+  } else if (playerSelection === `paper` && computerSelection === `scissors`) {
+    resultText.textContent = `YOU LOST, Scissors SHREDS Paper!`;
+    waitingIcon1.className = "fa-sharp fa-regular fa-hand";
+    waitingIcon2.className =
+      "fa-sharp fa-regular fa-hand-scissors fa-beat-fade";
+  }
 }
+
 
 getPlayerChoice((playerSelection) => {
   const computerSelection = getComputerChoice();
+  playRound(playerSelection, computerSelection);
 
   console.log(playerSelection);
 });
+/*
+function startGame () {
+  let 
+}
+*/
