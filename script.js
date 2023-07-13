@@ -134,14 +134,28 @@ function playRound(playerSelection, computerSelection) {
 }
 
 
-getPlayerChoice((playerSelection) => {
+
+
+let Startgame = document.getElementById("start-button");
+
+Startgame.addEventListener("click", () => {
+
+  // This first part of the code removes the previous results and enables the Start Button to replay the game
+const resultsContainer = document.getElementById("results-div");
+const choiceContainer = document.getElementById("choice-div");
+if (resultsContainer) {
+  resultsContainer.remove();
+}
+if (choiceContainer) {
+  choiceContainer.remove();
+}
+
+ // this part calls all the other functions we created in a logic way
+  getPlayerChoice((playerSelection) => {
   const computerSelection = getComputerChoice();
   playRound(playerSelection, computerSelection);
 
   console.log(playerSelection);
 });
-/*
-function startGame () {
-  let 
-}
-*/
+});
+

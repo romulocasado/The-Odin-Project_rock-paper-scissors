@@ -1,166 +1,125 @@
-const gameOptions = [`rock`, `paper`, `scissors`];
-let roundResults = [];
+const choices = ["rock", "paper", "scissors"];
+const winners = [];
 
-function getComputerChoice() {
-  let ComputerRandomSelection =
-    gameOptions[Math.floor(gameOptions.length * Math.random())];
-
-  return ComputerRandomSelection;
-} /*end of the function getComputerChoice()*/
-
-function getPlayerChoice() {
-  let PlayerSelection = prompt(`write "ROCK", "PAPER" or "SCISSORS"`);
-
-  if (
-    PlayerSelection === null ||
-    PlayerSelection === undefined ||
-    !gameOptions.includes(PlayerSelection.toLowerCase())
-    // checks if PlayerSelection contains one of the 3 values provided at gameOptions array
-  ) {
-    alert(`You have to type one of the options: ROCK, PAPER, or SCISSORS`);
-    return getPlayerChoice();
-  }
-
-  return PlayerSelection.toLowerCase();
-} /*end of the function getPlayerChoice()*/
-
-function playRound(round) {
-  const playerSelection = getPlayerChoice();
-  const computerSelection = getComputerChoice();
-
-  // conditional statements for each one of the scenarios in the round
-
-  if (playerSelection === computerSelection) {
-    roundResults.push("Tie");
-    console.log(`Round ${round}: It's a tie!`);
-  } else if (
-    (playerSelection === `rock` && computerSelection === `scissors`) ||
-    (playerSelection === `paper` && computerSelection === `rock`) ||
-    (playerSelection === `scissors` && computerSelection === `paper`)
-  ) {
-    roundResults.push(`Player`);
-    console.log(`Round ${round}: You won this round!`);
-  } else {
-    roundResults.push(`Computer`);
-    console.log(`Round ${round}: You lost this round!`);
-  }
-} /*end of the function playRound()*/
-
-function visuals() {
-  //const playerSelection = getPlayerChoice();
-  //const computerSelection = getComputerChoice();
-
-  let rockWins = document.createElement("i");
-  rockWins.className = "fa-sharp fa-regular fa-hand-back-fist fa-beat-fade";
-  let rockLost = document.createElement("i");
-  rockLost.className = "fa-sharp fa-regular fa-hand-back-fist";
-
-  let paperWins = document.createElement("i");
-  paperWins.className = "fa-sharp fa-regular fa-hand fa-beat-fade";
-  let paperLost = document.createElement("i");
-  paperLost.className = "fa-sharp fa-regular fa-hand";
-
-  let scissorsWins = document.createElement("i");
-  scissorsWins.className = "fa-sharp fa-regular fa-hand-scissors fa-beat-fade";
-  let scissorsLost = document.createElement("i");
-  scissorsLost.className = "fa-sharp fa-regular fa-hand-scissors";
-
-  const matchContainer = document.getElementById(`match-div`);
-  matchContainer.textContent = `CHOOSE BETWEEN ONE OF THE OPTIONS`;
-  const lineBreak = document.createElement("br");
-  matchContainer.appendChild(lineBreak);
-  matchContainer.appendChild(rockLost);
-  matchContainer.appendChild(paperLost);
-  matchContainer.appendChild(scissorsLost);
-} /* end of the function visuals() */
-/**
-<i class="fa-sharp fa-regular fa-hand-scissors fa-beat-fade"></i>
- */
-visuals();
+// plays the game
+// plays five rounds
 /*
-function roundVisuals() {
-  const playerSelection = getPlayerChoice();
-  const computerSelection = getComputerChoice();
+    of course we could just type like this
 
-  const rockPicture = document.createElement(
-    `<i class="fa-sharp fa-light fa-hand-back-fist fa-bounce"></i>`
-  );
-  // rockPicture.src = "imgs/Rock.jpg";
+        playRound();
+        playRound();
+        playRound();
+        playRound();
+        playRound();
 
-  const paperPicture = document.createElement(
-    `<i class="fa-sharp fa-light fa-hand-back-fist fa-bounce"></i>`
-  );
-  // paperPicture.src = "imgs/Paper.jpg";
-
-  const scissorsPicture = document.createElement(
-    `<i class="fa-sharp fa-light fa-hand-back-fist fa-bounce"></i>`
-  );
-  // scissorsPicture.src = "imgs/Scissors.jpg";
-
-  const matchContainer = document.getElementById(`match-div`);
-  let versusTxt = document.createElement("p");
-  versusTxt.textContent = `X`;
-
-  if (playerSelection === `rock` && computerSelection === `rock`) {
-    matchContainer.appendChild(rockPicture);
-    matchContainer.appendChild(versusTxt);
-    matchContainer.appendChild(rockPicture.cloneNode(true));
-    matchContainer.innerHTML(`<br>`);
-    matchContainer.textContent = `It's a tie!`;
-  } else if (playerSelection === `paper` && computerSelection === `paper`) {
-    matchContainer.appendChild(paperPicture);
-    matchContainer.appendChild(versusTxt);
-    matchContainer.appendChild(paperPicture.cloneNode(true));
-    matchContainer.innerHTML(`<br>`);
-    matchContainer.textContent = `It's a tie!`;
-  } else if (
-    playerSelection === `scissors` &&
-    computerSelection === `scissors`
-  ) {
-    matchContainer.appendChild(scissorsPicture);
-    matchContainer.appendChild(versusTxt);
-    matchContainer.appendChild(scissorsPicture.cloneNode(true));
-    matchContainer.innerHTML(`<br>`);
-    matchContainer.textContent = `It's a tie!`;
+    but this is not good practice, as we can't repeat ourselves, so let's prepare a for loop...
+    */
+function game() {
+  for (let i = 1; i <= 5; i++) {
+    playRound(i);
   }
-}
-
-var container = document.getElementById('container');
-container.appendChild(img);
-*/
-
-function logWins() {
-  let playerWins = roundResults.filter((result) => result === "Player").length;
-  let computerWins = roundResults.filter(
-    (result) => result === "Computer"
-  ).length;
-  let tiedGames = roundResults.filter((result) => result === "Tie").length;
-
-  console.log(`~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~`);
-  console.log("Results:");
-  console.log(`Player Wins: ${playerWins}`);
-  console.log(`Computer Wins: ${computerWins}`);
-  console.log(`Ties: ${tiedGames}`);
-
-  if (playerWins > computerWins) {
-    console.log(`You won the game!`);
-  } else if (computerWins > playerWins) {
-    console.log(`You lost the game`);
-  } else {
-    console.log(`The game tied!`);
-  }
-  console.log(`_____________________________________________`);
-}
-
-function playGame() {
-  for (let roundNumber = 1; roundNumber <= 5; roundNumber++) {
-    playRound(roundNumber);
-  }
-} /*end of the function playGame()*/
-
-/*
-function gameExecution() {
-  playGame();
+  document.querySelector("button").textContent = "Start again";
   logWins();
 }
-*/
+
+function playRound(round) {
+  const playerSelection = playerChoice();
+  const computerSelection = computerChoice();
+  const winner = checkWinner(playerSelection, computerSelection);
+  winners.push(winner);
+  logRound(playerSelection, computerSelection, winner, round);
+}
+
+function playerChoice() {
+  // player input here
+  let input = prompt("Type Rock, Paper or Scissors");
+  while (input == null) {
+    input = prompt("Type Rock, Paper or Scissors");
+  }
+  // input changing to lower case
+  input = input.toLowerCase();
+  // creating the variable check, for cleaner view
+  let check = validateInput(input);
+  // checking the truthness of the input, so if the user enters a wrong answer, the input will loop until the user type it correctly
+  while (check == false) {
+    input = prompt(
+      "Type Rock, Paper or Scissors. Capitalization doesn't matter"
+    );
+    while (input == null) {
+      input = prompt("Type Rock, Paper or Scissors");
+    }
+    input = input.toLowerCase();
+    check = validateInput(input);
+  }
+  return input;
+}
+
+function computerChoice() {
+  // random computer input here
+  return choices[Math.floor(Math.random() * choices.length)];
+}
+
+// to check if the input is correctly used, the first non simple way is to write this way
+
+/*
+            function validateInput(choice) {
+                if (choices.includes(choice)) {
+                    return true
+                }   else {
+                    return false
+                }
+            }
+            */
+// of course, there's a cleaner way
+
+function validateInput(choice) {
+  return choices.includes(choice);
+}
+
+function checkWinner(choiceP, choiceC) {
+  if (choiceP === choiceC) {
+    return "Tie";
+  }
+  // In this moment, we could write the long way, wich goes as follows
+  /*
+
+    else if (choiceP === "Rock" && choiceC === "scissors") {
+        return "Player"
+    }
+    else if (choiceP === "scissors" && choiceC === "paper") {
+        return "Player"
+    }
+
+    */
+  // But, a cleaner way is to use the boolean rules of && and || togheter... take a look
+  else if (
+    (choiceP === "rock" && choiceC == "scissors") ||
+    (choiceP === "paper" && choiceC == "rock") ||
+    (choiceP === "scissors" && choiceC == "paper")
+  ) {
+    return "Player";
+  } else {
+    return "Computer";
+  }
+}
+// logging the results
+function logWins() {
+  let playerWins = winners.filter((item) => item == "Player").length;
+  let computerWins = winners.filter((item) => item == "Computer").length;
+  let ties = winners.filter((item) => item == "Tie").length;
+  console.log("Results:");
+  console.log("Player Wins:", playerWins);
+  console.log("Computer Wins:", computerWins);
+  console.log("Ties:", ties);
+}
+
+// logging the round
+
+function logRound(playerChoice, computerChoice, winner, round) {
+  console.log("Round:", round);
+  console.log("Player chose:", playerChoice);
+  console.log("Computer chose:", computerChoice);
+  console.log(winner, "Won the round!");
+  console.log("--------------------------");
+}
+

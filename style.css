@@ -15,18 +15,147 @@ body {
   );
   padding: 15px;
   line-height: 1.6;
-  margin: 15px;
+  margin: 10px;
   box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.8);
   border-radius: 20px;
   font-family: "Audiowide", sans-serif;
   border: 6px solid #1c2736;
 }
+
+@keyframes title-glow {
+  0% {
+    background: linear-gradient(
+      to right,
+      #81aff5 0%,
+      #91b8f8 20%,
+      #a1c2fb 40%,
+      #b1ccfe 60%,
+      #a1c2fb 80%,
+      #91b8f8 100%
+    );
+  }
+  10% {
+    background: linear-gradient(
+      to right,
+      #91b8f8 0%,
+      #a1c2fb 20%,
+      #b1ccfe 40%,
+      #c1d6ff 60%,
+      #b1ccfe 80%,
+      #a1c2fb 100%
+    );
+  }
+  20% {
+    background: linear-gradient(
+      to right,
+      #a1c2fb 0%,
+      #b1ccfe 20%,
+      #c1d6ff 40%,
+      #d1e0ff 60%,
+      #c1d6ff 80%,
+      #b1ccfe 100%
+    );
+  }
+  30% {
+    background: linear-gradient(
+      to right,
+      #b1ccfe 0%,
+      #c1d6ff 20%,
+      #d1e0ff 40%,
+      #e1eaff 60%,
+      #d1e0ff 80%,
+      #c1d6ff 100%
+    );
+  }
+  40% {
+    background: linear-gradient(
+      to right,
+      #c1d6ff 0%,
+      #d1e0ff 20%,
+      #e1eaff 40%,
+      #f1f4ff 60%,
+      #e1eaff 80%,
+      #d1e0ff 100%
+    );
+  }
+  50% {
+    background: linear-gradient(
+      to right,
+      #d1e0ff 0%,
+      #e1eaff 20%,
+      #f1f4ff 40%,
+      #e9f7ff 60%,
+      #f1f4ff 80%,
+      #e1eaff 100%
+    );
+  }
+  60% {
+    background: linear-gradient(
+      to right,
+      #e1eaff 0%,
+      #f1f4ff 20%,
+      #e9f7ff 40%,
+      #d9f0ff 60%,
+      #e9f7ff 80%,
+      #f1f4ff 100%
+    );
+  }
+  70% {
+    background: linear-gradient(
+      to right,
+      #e9f7ff 0%,
+      #d9f0ff 20%,
+      #e9f7ff 40%,
+      #f1f4ff 60%,
+      #e9f7ff 80%,
+      #d9f0ff 100%
+    );
+  }
+  80% {
+    background: linear-gradient(
+      to right,
+      #d9f0ff 0%,
+      #e9f7ff 20%,
+      #f1f4ff 40%,
+      #e1eaff 60%,
+      #f1f4ff 80%,
+      #e9f7ff 100%
+    );
+  }
+  90% {
+    background: linear-gradient(
+      to right,
+      #e9f7ff 0%,
+      #f1f4ff 20%,
+      #e1eaff 40%,
+      #d1e0ff 60%,
+      #e1eaff 80%,
+      #f1f4ff 100%
+    );
+  }
+  100% {
+    background: linear-gradient(
+      to right,
+      #f1f4ff 0%,
+      #e1eaff 20%,
+      #d1e0ff 40%,
+      #c1d6ff 60%,
+      #d1e0ff 80%,
+      #e1eaff 100%
+    );
+  }
+}
+
 h1 {
-  font-size: 80px;
+  font-size: 70px;
+  margin: 10px;
 }
 
 .start-button {
-  background: #62c3d9;
+  background: linear-gradient(red, transparent),
+    linear-gradient(to top left, lime, transparent),
+    linear-gradient(to top right, blue, transparent);
+  background-blend-mode: screen;
   padding: 15px;
   line-height: 1.6;
   margin: 15px;
@@ -39,138 +168,139 @@ h1 {
 }
 .subtitle {
   font-size: 30px;
-  font-family: 'Kanit', sans-serif;
+  font-family: "Kanit", sans-serif;
 }
 
 .start-button:hover {
-  animation-name: button-glow;
-  animation-duration: .5s;
+  animation-name: -glow;
+  animation-duration: .8s;
   animation-fill-mode: forwards;
   animation-iteration-count: infinite;
   font-weight: bold;
   border: 2px solid #3faae9;
+  box-shadow: 5px 5px 9px rgba(4, 104, 117, 0.6);
 }
 
 @keyframes button-glow {
   0% {
     background: radial-gradient(
       circle at center,
-      #0a3852 0%,
-      #004ca1 20%,
-      #009cc2 40%,
-      #1e90ff 60%,
-      #009cc2 80%,
-      #004ca1 100%
+      red 0%,
+      orange 20%,
+      yellow 40%,
+      lime 60%,
+      cyan 80%,
+      blue 100%
     );
   }
   10% {
     background: radial-gradient(
       circle at center,
-      #004ca1 0%,
-      #009cc2 20%,
-      #1e90ff 40%,
-      #00bfff 60%,
-      #1e90ff 80%,
-      #009cc2 100%
+      orange 0%,
+      yellow 20%,
+      lime 40%,
+      cyan 60%,
+      blue 80%,
+      purple 100%
     );
   }
   20% {
     background: radial-gradient(
       circle at center,
-      #009cc2 0%,
-      #1e90ff 20%,
-      #00bfff 40%,
-      #87cefa 60%,
-      #00bfff 80%,
-      #1e90ff 100%
+      yellow 0%,
+      lime 20%,
+      cyan 40%,
+      blue 60%,
+      purple 80%,
+      magenta 100%
     );
   }
   30% {
     background: radial-gradient(
       circle at center,
-      #1e90ff 0%,
-      #00bfff 20%,
-      #87cefa 40%,
-      #add8e6 60%,
-      #87cefa 80%,
-      #00bfff 100%
+      lime 0%,
+      cyan 20%,
+      blue 40%,
+      purple 60%,
+      magenta 80%,
+      red 100%
     );
   }
   40% {
     background: radial-gradient(
       circle at center,
-      #00bfff 0%,
-      #87cefa 20%,
-      #add8e6 40%,
-      #e0ffff 60%,
-      #add8e6 80%,
-      #87cefa 100%
+      cyan 0%,
+      blue 20%,
+      purple 40%,
+      magenta 60%,
+      red 80%,
+      orange 100%
     );
   }
   50% {
     background: radial-gradient(
       circle at center,
-      #87cefa 0%,
-      #add8e6 20%,
-      #e0ffff 40%,
-      #00bfff 60%,
-      #e0ffff 80%,
-      #add8e6 100%
+      blue 0%,
+      purple 20%,
+      magenta 40%,
+      red 60%,
+      orange 80%,
+      yellow 100%
     );
   }
   60% {
     background: radial-gradient(
       circle at center,
-      #add8e6 0%,
-      #e0ffff 20%,
-      #00bfff 40%,
-      #1e90ff 60%,
-      #00bfff 80%,
-      #e0ffff 100%
+      purple 0%,
+      magenta 20%,
+      red 40%,
+      orange 60%,
+      yellow 80%,
+      lime 100%
     );
   }
   70% {
     background: radial-gradient(
       circle at center,
-      #e0ffff 0%,
-      #00bfff 20%,
-      #1e90ff 40%,
-      #009cc2 60%,
-      #1e90ff 80%,
-      #00bfff 100%
+      magenta 0%,
+      red 20%,
+      orange 40%,
+      yellow 60%,
+      lime 80%,
+      cyan 100%
     );
   }
   80% {
     background: radial-gradient(
       circle at center,
-      #00bfff 0%,
-      #1e90ff 20%,
-      #009cc2 40%,
-      #004ca1 60%,
-      #009cc2 80%,
-      #1e90ff 100%
+      red 0%,
+      orange 20%,
+      yellow 40%,
+      lime 60%,
+      cyan 80%,
+      blue 100%
     );
   }
   90% {
     background: radial-gradient(
       circle at center,
-      #1e90ff 0%,
-      #009cc2 20%,
-      #004ca1 40%,
-      #0a3852 60%,
-      #004ca1 80%,
-      #009cc2 100%
+      orange 0%,
+      yellow 20%,
+      lime 40%,
+      cyan 60%,
+      blue 80%,
+      purple 100%
     );
   }
   100% {
     background: radial-gradient(
       circle at center,
-      #009cc2 0%,
-      #004ca1 20%,
-      #0a3852 40%,
-      #004ca1 60%,
-      #0a3852 80%,
-      #004ca1 100%
+      yellow 0%,
+      lime 20%,
+      cyan 40%,
+      blue 60%,
+      purple 80%,
+      magenta 100%
     );
   }
 }
@@ -193,7 +323,7 @@ h1 {
   margin-bottom: 15px;
   box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.8);
   border-radius: 20px;
-  font-family: 'Kanit', sans-serif;
+  font-family: "Kanit", sans-serif;
   font-size: 20px;
   font-weight: bold;
   border: 6px solid #1c2736;
@@ -249,9 +379,8 @@ h1 {
   }
   100% {
     color: #427992;
-    
   }
-}/*end of choice-container style*/
+} /*end of choice-container style*/
 /*results-container style*/
 #results-div {
   width: 500px; /* Adjust the width as needed */
@@ -263,7 +392,7 @@ h1 {
   margin-top: 15px;
   margin-bottom: 15px;
   box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.8);
-  font-family: 'Kanit', sans-serif;
+  font-family: "Kanit", sans-serif;
   font-size: 30px;
   font-weight: bold;
   border: 6px solid #1c2736;
@@ -275,6 +404,6 @@ h1 {
 }
 #results-div p {
   font-size: 25px;
-  font-family: 'Lilita One', cursive;
+  font-family: "Lilita One", cursive;
   color: #1c2736;
 }
