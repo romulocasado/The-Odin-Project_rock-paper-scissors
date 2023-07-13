@@ -1,6 +1,6 @@
 const gameOptions = [`rock`, `paper`, `scissors`];
 const lineBreak = document.createElement("br");
-
+let playerSelection = ``;
 
 function getComputerChoice() {
   let ComputerRandomSelection =
@@ -9,9 +9,8 @@ function getComputerChoice() {
   return ComputerRandomSelection;
 } /* end of the function getComputerChoice() */
 
-function getPlayerChoice () {
-  
-  // creating the game icons
+function getPlayerChoice(callback) {
+  // creating the icons the player will choose between
   let rockIcon = document.createElement("i");
   rockIcon.className = "fa-sharp fa-regular fa-hand-back-fist";
   rockIcon.id = "rock-choice";
@@ -23,7 +22,7 @@ function getPlayerChoice () {
   let scissorsIcon = document.createElement("i");
   scissorsIcon.className = "fa-sharp fa-regular fa-hand-scissors";
   scissorsIcon.id = "scissors-choice";
-    
+
   //creating the player's choiceContainer and putting it together
   const choiceContainer = document.createElement("div");
   choiceContainer.id = "choice-div";
@@ -34,23 +33,27 @@ function getPlayerChoice () {
   choiceContainer.appendChild(scissorsIcon);
   document.body.appendChild(choiceContainer);
 
-  // creating the click events for each of the icons
-  let playerChoice = ``;
+  /* 
+  when using a callback function in this approach, we pass a separate callback function to getPlayerChoice, and within the event listeners, we call that function with the chosen option as an argument, like callback("rock");.
+  */
   let clickRock = document.getElementById("rock-choice");
   let clickPaper = document.getElementById("paper-choice");
   let clickScissors = document.getElementById("scissors-choice");
 
   clickRock.addEventListener("click", () => {
-    playerChoice = `rock`;
+    callback("rock");
   });
 
   clickPaper.addEventListener("click", () => {
-    playerChoice = `paper`;
+    callback("paper");
   });
 
   clickScissors.addEventListener("click", () => {
-    playerChoice = `scissors`;
+    callback("scissors");
   });
-  console.log(playerChoice);
 } /* end of the function getPlayerChoice() */
 
+getPlayerChoice((choice) => {
+  playerSelection = choice;
+  console.log(playerSelection);
+});
