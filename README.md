@@ -8,7 +8,7 @@
 
  The nº 1 objective: write code in a human readable way (as clear as possible), and to preserve what's considered good practice.
 
- The nº 2 objective: remaster the first version of the game, which was played on console, to a version with UI and web responsiveness.
+ The nº 2 objective: remaster the first version of the game, which was played on console, to a version with UI and web responsiveness (the first version is intact on script2.js)
 
  The nº 3 objective: to commit in a standard, good practice, way. Even if I'm working alone on this project.
  
