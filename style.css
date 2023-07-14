@@ -3,7 +3,7 @@ body {
   background-color: #93c6e7;
 }
 
-/*Title style*/
+/*Title-div style*/
 .title-div {
   text-align: center;
   background: linear-gradient(
@@ -175,9 +175,7 @@ h1 {
   font-weight: bold;
   border: 2px solid #3faae9;
   box-shadow: 5px 5px 9px rgba(4, 104, 117, 0.6);
-}
-
-/*End of Title style*/
+}/*End of Title-div style*/
 /*choice-container style*/
 #choice-div {
   width: 500px; /* Adjust the width as needed */

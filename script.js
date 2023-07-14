@@ -1,6 +1,7 @@
 const gameOptions = [`rock`, `paper`, `scissors`];
 const lineBreak = document.createElement("br");
 let playerSelection = ``;
+let startGame = document.getElementById("start-button");
 
 function getComputerChoice() {
   let ComputerRandomSelection =
@@ -133,9 +134,8 @@ function playRound(playerSelection, computerSelection) {
   }
 }
 
-let Startgame = document.getElementById("start-button");
 
-Startgame.addEventListener("click", () => {
+startGame.addEventListener("click", () => {
   // This first part of the code removes the previous results and enables the Start Button to replay the game
   const resultsContainer = document.getElementById("results-div");
   const choiceContainer = document.getElementById("choice-div");
