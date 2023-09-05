@@ -12,3 +12,5 @@
 
  The nº 3 objective: to commit in a standard, good practice, way. Even if I'm working alone on this project.
  
+page adress:
+https://romulocasado.github.io/The-Odin-Project_rock-paper-scissors/
