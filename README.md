@@ -2,6 +2,8 @@
 
  Remaster of the first JS project from The Odin Project, a rock, paper, scissors game
 
+ The project is one of the requisites to complete the Foundations Course from The Odin Project, at https://www.theodinproject.com/paths/foundations/courses/foundations
+
  After sometime focusing on life's demands, it's time to return to my programming studies, I'm redoing from scratch a project I did months ago back when I was learning HTML, CSS and JS.
 
  I plan to re-familiarize myself with programming and finish the Odin Project Fundamentals course before the next steps.
